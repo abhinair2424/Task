@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="text-align: center; font-size: 40px; background-image: url({% static 'images/html.jpg' %});
+  background-repeat: no-repeat; background-size: 1550px;">
+</style>
+<h2> Enter your details </h2>
+<form action="/" method="post">
+    {% csrf_token %}
+       <input type="text" name="first_name" placeholder="Enter your first name"><br>
+       <input type="text" name="last_name" placeholder="Enter your last name"><br>
+       <input type="text" name="DOB" placeholder="Enter your date of birth"><br>
+       <input type="text" name="gender" placeholder="Enter your gender"><br>
+       <input type="text" name="phone" placeholder="Enter your phone number"><br>
+       <input type="email" name="email" placeholder="Enter your email address"><br>
+       <input type="text" name="address" placeholder="Enter your address"><br>
+</form>
+
+{% for msg in messages %}
+<h2 style="color:white;">{{msg}}</h2>
+{% endfor %}
+
+<div class = submit>
+    <a href="result"> <button class="clkbtn"> Submit and logout </button> </a>
+</div>
+
+</body>
+</html>
